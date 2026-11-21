@@ -1,0 +1,12 @@
+# DEC7562 - Aplicacao de teste da chamada de sistema sem_waiters()
+
+include $(APPDIR)/Make.defs
+
+PROGNAME  = $(CONFIG_EXAMPLES_SEMWAITERS_PROGNAME)
+PRIORITY  = $(CONFIG_EXAMPLES_SEMWAITERS_PRIORITY)
+STACKSIZE = $(CONFIG_EXAMPLES_SEMWAITERS_STACKSIZE)
+MODULE    = $(CONFIG_EXAMPLES_SEMWAITERS)
+
+MAINSRC = semwaiters_main.c
+
+include $(APPDIR)/Application.mk

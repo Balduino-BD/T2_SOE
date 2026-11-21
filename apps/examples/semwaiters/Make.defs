@@ -1,0 +1,5 @@
+# DEC7562 - Aplicacao de teste da chamada de sistema sem_waiters()
+
+ifneq ($(CONFIG_EXAMPLES_SEMWAITERS),)
+CONFIGURED_APPS += $(APPDIR)/examples/semwaiters
+endif

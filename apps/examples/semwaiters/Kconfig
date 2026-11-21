@@ -1,0 +1,25 @@
+
+
+#
+# DEC7562 - Aplicacao de teste da chamada de sistema sem_waiters()
+#
+
+config EXAMPLES_SEMWAITERS
+	tristate "DEC7562: teste da chamada de sistema sem_waiters()"
+	default n
+
+if EXAMPLES_SEMWAITERS
+
+config EXAMPLES_SEMWAITERS_PROGNAME
+	string "Nome do programa"
+	default "semwaiters"
+
+config EXAMPLES_SEMWAITERS_PRIORITY
+	int "Prioridade"
+	default 100
+
+config EXAMPLES_SEMWAITERS_STACKSIZE
+	int "Tamanho da pilha"
+	default DEFAULT_TASK_STACKSIZE
+
+endif
