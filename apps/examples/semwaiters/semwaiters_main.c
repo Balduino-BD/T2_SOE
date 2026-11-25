@@ -97,8 +97,8 @@ int main(int argc, FAR char *argv[])
   erro("pids = NULL, max = 8", sem_waiters(&g_sem, NULL, 8));
 
   /* Liberta as tarefas que ficaram bloqueadas */
-
-  sem_post(&g_sem);
+  //sleep(15);
+  sem_post(&g_sem); 
   sem_post(&g_sem);
   usleep(100 * 1000);
   sem_destroy(&g_sem);

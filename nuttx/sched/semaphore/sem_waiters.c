@@ -25,9 +25,10 @@ int sem_waiters(FAR sem_t *sem, FAR pid_t *pids, int max)
 
   if (sem == NULL || max < 0 || (pids == NULL && max > 0))
     {
-      set_errno(EINVAL);
+      set_errno(EINVAL); 
       return ERROR;
     }
+
 
   /* 2. Entra na secao critica: um sem_post() (de outra tarefa ou de uma
    *    interrupcao) pode tirar uma tarefa da lista enquanto a percorremos.
