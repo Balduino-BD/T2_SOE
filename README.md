@@ -1,3 +1,5 @@
+
+
 # Segundo trabalho de Sistemas Operacionais Embarcados (DEC7562)
 
 **Aluno:** Balduino José da Silva 
@@ -59,7 +61,7 @@ leave_critical_section(flags);
 | `nuttx/sched/semaphore/sem_waiters.c` | **novo** – implementação no kernel |
 | `nuttx/include/sys/syscall_lookup.h` | **modificado** (+1 linha) – registro da chamada de sistema |
 | `nuttx/sched/semaphore/Make.defs` | **modificado** (+2 linhas) – compilação do novo arquivo |
-| `nuttx/sched/semaphore/CMakeLists.txt` | **modificado** (+1 linha) – compilação com CMake |
+| `nuttx/sched/semaphore/CMakeLists.txt` | **modificado** (+1 linha) - compilação com CMake |
 | `apps/examples/semwaiters/` | **novo** – aplicação de teste |
 
 Linhas acrescentadas aos arquivos existentes (Estão todas marcadas com `DEC7562`):
@@ -84,13 +86,11 @@ O `syscall/syscall.csv` não foi alterado: no modelo FLAT a aplicação chama a 
 
 ## 6. Compilação e execução
 
-A placa usada para este trabalho foi a Heltec WiFi LoRa 32 V2 (ESP32), configuração `esp32-devkitc:nsh`, modelo FLAT.
+A placa usada para este trabalho foi a Heltec WiFi LoRa 32 V2 (ESP32), configuração `esp32-devkitc:nsh`
 
 ```bash
 cd ~/nuttxspace/nuttx
 ./tools/configure.sh -l esp32-devkitc:nsh
-# copiar os arquivos de nuttx/ e apps/ deste repositório para os mesmos caminhos
-# e acrescentar as 3 linhas da seção 5
 echo "CONFIG_ESP32_IGNORE_CHIP_REVISION_CHECK=y" >> .config   # só para ESP32 rev. < 3.0 (o da Heltec é v1.1)
 echo "CONFIG_EXAMPLES_SEMWAITERS=y" >> .config
 make olddefconfig
